@@ -1,0 +1,264 @@
+# Training data for the CodeAlpha AI Chatbot
+# Format:
+#   ##intent <tag>
+#   - <example user pattern>
+#   @response <bot answer>
+#
+# Lines starting with # are comments.
+
+##intent greeting
+- hello
+- hi
+- hey
+- good morning
+- good evening
+- hi there
+- hello bot
+- hey buddy
+@response Hello! I am AlphaBot, the CodeAlpha internship assistant. How can I help you today?
+@response Hi there! Ask me anything about the CodeAlpha Java internship.
+@response Hey! Nice to see you. What would you like to know?
+
+##intent goodbye
+- bye
+- goodbye
+- see you
+- see you later
+- thanks bye
+- ok bye
+- exit
+@response Goodbye! All the best with your internship submission.
+@response See you soon. Keep coding!
+@response Bye! Feel free to come back if you have more questions.
+
+##intent thanks
+- thanks
+- thank you
+- thanks a lot
+- thank you so much
+- appreciate it
+- awesome thanks
+@response You are welcome! Happy to help.
+@response Anytime! Good luck with your tasks.
+@response My pleasure. Keep up the good work.
+
+##intent about_bot
+- who are you
+- what is your name
+- what are you
+- tell me about yourself
+- are you a robot
+- how do you work
+@response I am AlphaBot, a rule-based Java chatbot trained with basic NLP. I match your question to the closest known intent using TF-IDF and cosine similarity.
+@response I am a Java based AI chatbot built for the CodeAlpha internship. I understand text, extract keywords and pick the best trained answer.
+
+##intent capabilities
+- what can you do
+- what do you do
+- how can you help me
+- what are your features
+- help me
+- show me what you can do
+@response I can answer frequently asked questions about the CodeAlpha internship: tasks, deadlines, submission process, certificates, GitHub and LinkedIn requirements.
+@response Ask me things like "what are the tasks", "what is the submission deadline", "how do I submit" or "do I get a certificate".
+
+##intent tasks
+- what are the tasks
+- list the tasks
+- which tasks should i complete
+- tell me the java tasks
+- what projects are there
+- how many tasks are there
+- show me the task list
+@response There are 4 Java Programming tasks: 1) Student Grade Tracker, 2) Stock Trading Platform, 3) Artificial Intelligence Chatbot, 4) Hotel Reservation System. You must complete any 2 or 3 of them.
+@response Task list: Student Grade Tracker, Stock Trading Platform, AI Chatbot and Hotel Reservation System. Completing 2 or 3 tasks is mandatory for the certificate.
+
+##intent task_one
+- what is task 1
+- explain the student grade tracker
+- tell me about task one
+- student grade tracker details
+- student grade tracker
+- grade tracker project
+- marks management project
+@response Task 1 - Student Grade Tracker: input and manage student grades, calculate average, highest and lowest scores, use arrays or ArrayLists to store data, and display a summary report. The interface can be console or GUI based.
+
+##intent task_two
+- what is task 2
+- explain the stock trading platform
+- tell me about task two
+- stock trading platform
+- trading platform project
+- buy sell shares project
+@response Task 2 - Stock Trading Platform: simulate a stock trading environment with market data display, buy and sell operations, portfolio performance tracking, OOP design for stocks, users and transactions, and optional file I/O or database persistence.
+
+##intent task_three
+- what is task 3
+- explain the ai chatbot
+- tell me about task three
+- ai chatbot
+- chatbot project
+- artificial intelligence chatbot task
+@response Task 3 - AI Chatbot: build a Java chatbot using NLP techniques, implement rule-based or machine learning answers, train it on frequently asked questions, and integrate it with a GUI or web interface. You are talking to it right now!
+
+##intent task_four
+- what is task 4
+- explain the hotel reservation system
+- tell me about task four
+- hotel reservation system
+- hotel booking system
+- hotel booking task
+- hotel management project
+- room categories standard deluxe suite
+@response Task 4 - Hotel Reservation System: search, book and manage hotel rooms with room categories such as Standard, Deluxe and Suite, allow reservation and cancellation, simulate payment, and use OOP with file I/O or a database.
+
+##intent number_of_tasks
+- how many tasks do i need to complete
+- is one task enough
+- minimum tasks required
+- can i submit only one task
+- how many tasks are mandatory
+@response You must complete a minimum of 2 or 3 tasks out of the 4 listed. Submitting only one task is considered incomplete and the certificate will not be issued.
+
+##intent deadline
+- what is the deadline
+- when is the last date of submission
+- submission deadline
+- when should i submit
+- last date to submit
+- how much time do i have
+@response The internship runs from 10th November 2026 to 10th December 2026, and the submission deadline is 10th December 2026. Submit well before the deadline to be safe.
+
+##intent submission
+- how do i submit my task
+- where is the submission form
+- how to submit the project
+- submission process
+- what is the submission link
+- submit link
+@response Submissions are made only through the official Google Form shared in your WhatsApp group. Upload your work, enter the correct Student ID and review everything carefully before clicking Submit.
+
+##intent github
+- how do i upload to github
+- github repository link
+- what repository name should i use
+- do i need github
+- how to make a repo
+@response Upload your complete source code to GitHub in a repository named CodeAlpha_ProjectName, and submit the GitHub repository link. A tutorial video on how to create the repository is shared with your task document.
+
+##intent certificate
+- will i get a certificate
+- how to get the certificate
+- when will i receive my certificate
+- is certificate provided
+- completion certificate
+@response Completing 2 or 3 tasks makes you eligible for the Completion Certificate, which is QR verified and carries a unique ID. Certificate notifications are announced in the official WhatsApp group.
+
+##intent perks
+- what are the perks
+- what do i get from this internship
+- benefits of the internship
+- offer letter
+- letter of recommendation
+- what is included
+@response Internship perks include an Internship Offer Letter, a QR verified Completion Certificate, a Unique ID Certificate, a Letter of Recommendation based on performance, job or placement support and resume building support.
+
+##intent linkedin
+- do i need to post on linkedin
+- linkedin video explanation
+- should i tag codealpha
+- linkedin post requirement
+- how to share on linkedin
+@response Yes. Share your internship status on LinkedIn tagging @CodeAlpha, and post a video explanation of your project with the GitHub repository link in the post.
+
+##intent whatsapp
+- whatsapp group link
+- how do i join the whatsapp group
+- where do i get updates
+- how will i get updates
+- official group
+@response All internship updates, deadlines and certificate notifications are shared only through the official WhatsApp group. Join it using the invite link given in your task mail so you never miss an update.
+
+##intent contact
+- how do i contact codealpha
+- contact details
+- what is the email address
+- phone number
+- support contact
+- website
+@response You can reach CodeAlpha at www.codealpha.tech, on WhatsApp at +91 9336576683, or by email at services@codealpha.tech and services.codealpha@gmail.com.
+
+##intent selection
+- are tasks selected randomly
+- how are tasks assigned
+- do i have to complete all four tasks
+- can i complete all four tasks
+- which tasks are best
+@response Four tasks are provided in your domain and only 2 or 3 are mandatory. You are free to complete more, but make sure the mandatory minimum is submitted before the deadline.
+
+##intent duration
+- what is the duration of the internship
+- how long is the internship
+- when does the internship start
+- internship dates
+- what is the batch
+@response The internship batch runs from 10th November 2026 to 10th December 2026, so it is a one month program.
+
+##intent progress
+- how is my work evaluated
+- what is the evaluation criteria
+- how will i be graded
+- how is performance measured
+@response Evaluation is based on the technical correctness of the submitted tasks, code quality, your documentation and the LinkedIn explanation video. The Letter of Recommendation is based on your performance.
+
+##intent java
+- what is java
+- why java for this internship
+- tell me about java programming
+- is java easy
+@response Java is an object oriented, platform independent language used heavily for backend and enterprise applications. This internship covers Java fundamentals, collections, multithreading, file handling and frameworks like Spring and Hibernate.
+
+##intent oop
+- what is oop
+- explain object oriented programming
+- explain encapsulation
+- explain inheritance
+@response OOP organises code into classes and objects using four pillars: encapsulation, inheritance, polymorphism and abstraction. All the internship tasks are expected to use OOP design.
+
+##intent nlp
+- what is nlp
+- how does this chatbot work
+- explain natural language processing
+- how do you understand my question
+@response I normalise your text, split it into tokens, remove stop words, apply a simple stemmer, and convert it into a TF-IDF weight vector. That vector is compared with every trained intent using cosine similarity, and the closest match above a threshold wins.
+
+##intent time
+- what is the time now
+- current time
+- what date is it today
+@response I cannot see the clock, but you can check your system time. What matters more is the 10th December 2026 deadline!
+
+##intent fell_good
+- i am happy
+- i finished my task
+- i completed my projects
+- i submitted my work
+- i am done with all tasks
+@response That is excellent news! Make sure your GitHub repository is public, your README is clear, and your LinkedIn video is posted. Congratulations!
+
+##intent fell_bad
+- i am stuck
+- i am confused
+- i cannot solve this
+- this is difficult
+- i need help
+- i am tired
+@response Do not worry, take it one task at a time. Start with Task 1 (Student Grade Tracker) since it is the simplest, then move to the others. You can also ask me for help on any task.
+
+##intent frustration
+- this is useless
+- you are not helping
+- that is wrong
+- you are stupid
+- i hate this
+@response Sorry about that. Try rephrasing your question, for example: "what is the deadline", "how do I submit" or "what are the tasks". I will still help.
