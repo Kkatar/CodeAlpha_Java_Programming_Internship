@@ -71,9 +71,9 @@ public class HotelReservationSystem {
     // ---------------------------------------------------------------
     private static void searchRooms() {
         System.out.println("\n--- SEARCH AVAILABLE ROOMS ---");
-        LocalDate in = readDate(" Check-in date (dd-MM-yyyy): ");
+        LocalDate in = readDate(" Check-in date  (dd-MM-yyyy, e.g. 25-12-2026): ");
         if (in == null) return;
-        LocalDate out = readDate(" Check-out date (dd-MM-yyyy): ");
+        LocalDate out = readDate(" Check-out date (dd-MM-yyyy, e.g. 28-12-2026): ");
         if (out == null) return;
         if (!out.isAfter(in)) {
             System.out.println(" Check-out date must be after the check-in date.");
@@ -111,9 +111,9 @@ public class HotelReservationSystem {
     // ---------------------------------------------------------------
     private static void makeReservation() {
         System.out.println("\n--- MAKE A RESERVATION ---");
-        LocalDate in = readDate(" Check-in date (dd-MM-yyyy): ");
+        LocalDate in = readDate(" Check-in date  (dd-MM-yyyy, e.g. 25-12-2026): ");
         if (in == null) return;
-        LocalDate out = readDate(" Check-out date (dd-MM-yyyy): ");
+        LocalDate out = readDate(" Check-out date (dd-MM-yyyy, e.g. 28-12-2026): ");
         if (out == null) return;
         if (!out.isAfter(in)) {
             System.out.println(" Check-out date must be after the check-in date.");
@@ -350,18 +350,52 @@ public class HotelReservationSystem {
         }
     }
 
+    /** Accepted input formats, tried in order (2-digit years are read as 20xx). */
+    private static final DateTimeFormatter[] DATE_FORMATS = {
+        DateTimeFormatter.ofPattern("d-M-yyyy"),
+        DateTimeFormatter.ofPattern("d/M/yyyy"),
+        DateTimeFormatter.ofPattern("d.M.yyyy"),
+        DateTimeFormatter.ofPattern("d-M-yy"),
+        DateTimeFormatter.ofPattern("d/M/yy"),
+        DateTimeFormatter.ofPattern("yyyy-M-d")
+    };
+
+    /** Parses one of the accepted date formats, or null when the text is not a date. */
+    private static LocalDate parseDate(String text) {
+        for (DateTimeFormatter f : DATE_FORMATS) {
+            try {
+                return LocalDate.parse(text, f);
+            } catch (DateTimeParseException ignored) {
+                // try the next format
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Keeps asking until a valid future date is entered. Accepts 25-11-2026,
+     * 25-11-26, 25/11/2026, 25.11.26 and 2026-11-25. Pressing Enter alone
+     * (empty input) cancels the operation and returns null.
+     */
     private static LocalDate readDate(String prompt) {
-        String v = readLine(prompt);
-        try {
-            LocalDate d = LocalDate.parse(v, FMT);
-            if (d.isBefore(LocalDate.now())) {
-                System.out.println(" Date cannot be in the past.");
+        while (true) {
+            String v = readLine(prompt);
+            if (v.isEmpty()) {
+                System.out.println(" No date entered - returning to the menu.");
                 return null;
             }
+            LocalDate d = parseDate(v);
+            if (d == null) {
+                System.out.println(" '" + v + "' is not a date I can read. Try 25-12-2026, "
+                        + "25-12-26 or 25/12/2026 (or press Enter to cancel).");
+                continue;
+            }
+            if (d.isBefore(LocalDate.now())) {
+                System.out.println(" " + d.format(FMT) + " is in the past. Please enter today's date"
+                        + " (" + LocalDate.now().format(FMT) + ") or later.");
+                continue;
+            }
             return d;
-        } catch (DateTimeParseException e) {
-            System.out.println(" Invalid date format. Use dd-MM-yyyy (e.g. 25-12-2026).");
-            return null;
         }
     }
 

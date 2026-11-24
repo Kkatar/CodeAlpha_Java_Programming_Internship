@@ -51,6 +51,22 @@ java -cp out HotelReservationSystem
 
 or `./run.sh`
 
+## Accepted Date Formats
+
+Dates are typed as **check-in and check-out**, and all of these work:
+
+| Input | Meaning |
+|---|---|
+| `25-12-2026` | 25 December 2026 (recommended) |
+| `25-12-26` | same — a 2-digit year is read as `20xx` |
+| `25/12/2026`, `25/12/26` | slash separated |
+| `25.12.2026` | dot separated |
+| `2026-12-25` | ISO order |
+
+Invalid text, a past date, or a check-out on/before check-in is rejected with a clear
+message and the prompt asks again — you never lose your place in the menu.
+Press **Enter** on an empty date prompt to cancel and go back to the menu.
+
 ## Menu Options
 
 ```
