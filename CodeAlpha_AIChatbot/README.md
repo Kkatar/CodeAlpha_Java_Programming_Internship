@@ -53,6 +53,8 @@ java -cp out AIChatbot --gui
 
 or simply `./run.sh` (console) / `./run.sh gui`.
 
+**Windows:** double-click `run.bat` — it compiles and opens the **GUI chat window** directly.
+
 ## How the AI Works
 
 **Training phase (at start-up)**

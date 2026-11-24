@@ -58,6 +58,12 @@ java -cp out StudentGradeTracker
 
 Each folder also ships an executable `run.sh` (`./run.sh`) that compiles and runs it in one step.
 
+### Windows users — no terminal needed
+
+Just **double-click `run.bat`** inside a task folder. It checks that a JDK is installed,
+compiles `src\*.java` and starts the program. For Task 3, `run.bat` opens the **GUI chat window**
+(use `java -cp out AIChatbot` manually if you want the console version instead).
+
 > **Windows note:** if `javac` complains about unmappable characters, add `-encoding UTF-8`:
 > `javac -encoding UTF-8 -d out src/*.java`
 
